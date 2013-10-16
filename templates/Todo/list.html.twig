@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if todoList is defined %}
+        {% for todo in todoList %}
+            <article>
+                <h1><em>{{ todo.id }}</em> - {{ todo.name|upper }}</h1>
+                <p>{{ todo.content }}</p>
+                <a href="edit.php?id={{ todo.id }}">Edit</a> | <a href="delete.php?id={{ todo.id }}">Delete</a>
+            </article>
+        {% endfor %}
+    {% else %}
+        Aucun article
+    {% endif %}
+{% endblock %}

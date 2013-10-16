@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            {% block navbar %}
+                <li><a href="index.php">Liste des tâches</a></li>
+                <li><a href="add.php">Ajouter une tâche</a></li>
+            {% endblock %}
+        </ul>
+    </nav>
+    <div id="content">
+        {% block body %}{% endblock %}
+    </div>
+    <footer>
+        {% block footer %}
+            &copy; Copyright 2013
+        {% endblock %}
+    </footer>
+</body>
+</html>

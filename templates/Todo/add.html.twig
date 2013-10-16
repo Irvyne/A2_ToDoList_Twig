@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Add a todo</h1>
+    {% if errorMsg is defined and errorMsg != null %}
+        <p style="color: red;">{{ errorMsg }}</p>
+    {% endif %}
+    <form method="post">
+        <label for="name">Nom de la tâche :</label>
+        <input type="text" name="name" id="name" placeholder="nom..." required><br>
+        <label for="content">Contenu de la tâche :</label>
+        <textarea name="content" id="content" placeholder="contenu..." required></textarea><br>
+        <input type="submit" name="submit" value="Créer la tâche !">
+    </form>
+{% endblock %}

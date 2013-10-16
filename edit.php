@@ -31,6 +31,9 @@ if (isset($_POST['submit'])) {
     }
 }
 
+isset($error_msg) ?: $error_msg = null;
+
 echo $twig->render('Todo/edit.html.twig', array(
     'todo' => $todo,
+    'errorMsg' => $error_msg
 ));
